@@ -1,7 +1,7 @@
 extends Label
 
 # Called when the node enters the scene tree for the first time.
-func setup(content):
-	self.text = content
-
-#	rect_position = rect_size * -1/2
+func setup(content, color):
+	self.text = "* " + content
+	self.set("custom_colors/font_color", color)
+#	rect_position.y = rect_size.y * -1/2

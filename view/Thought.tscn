@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://view/Thought.gd" type="Script" id=1]
+[ext_resource path="res://assets/Roboto-Regular.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Disappear"
+[sub_resource type="DynamicFont" id=1]
+size = 18
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:self_modulate")
 tracks/0/interp = 2
@@ -23,7 +29,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.7 ),
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -32,13 +38,20 @@ tracks/1/keys = {
 }
 
 [node name="Thought" type="Label"]
-margin_right = 40.0
-margin_bottom = 14.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -31.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = SubResource( 1 )
 text = "Hello, hello"
+valign = 1
+autowrap = true
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Disappear = SubResource( 1 )
+anims/Disappear = SubResource( 2 )
