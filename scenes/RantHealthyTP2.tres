@@ -1,63 +1,74 @@
-[gd_resource type="Resource" load_steps=21 format=2]
+[gd_resource type="Resource" load_steps=13 format=2]
 
 [ext_resource path="res://ThoughtProcess.gd" type="Script" id=1]
 
-[sub_resource type="Resource" id=11]
+[sub_resource type="Resource" id=1]
 script = ExtResource( 1 )
-thoughts = [ "i want to work through my mistakes", "i dont need to be perfect", "i dont want to isolate" ]
-good_thought = "i want to work through my mistakes"
-continuation = SubResource( 10 )
+thoughts = [ "thats how i want to be" ]
+good_thought = "thats how i want to be"
 
-[sub_resource type="Resource" id=12]
+[sub_resource type="Resource" id=2]
+script = ExtResource( 1 )
+thoughts = [ "i want to see past the negatives", "i need to stop beating myself up", "i am so pessimistic" ]
+good_thought = "i want to see past the negatives"
+continuation = SubResource( 1 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 1 )
+thoughts = [ "i dont need to be perfect", "i dont need to try so hard", "i hold myself to high standards" ]
+good_thought = "i dont need to be perfect"
+continuation = SubResource( 2 )
+
+[sub_resource type="Resource" id=4]
 script = ExtResource( 1 )
 thoughts = [ "but ill keep going" ]
 good_thought = "but ill keep going"
-continuation = SubResource( 11 )
+continuation = SubResource( 3 )
 
-[sub_resource type="Resource" id=13]
+[sub_resource type="Resource" id=5]
 script = ExtResource( 1 )
 thoughts = [ "its tiring", "its slow", "its annoying" ]
 good_thought = "its tiring"
-continuation = SubResource( 12 )
+continuation = SubResource( 4 )
 
-[sub_resource type="Resource" id=14]
+[sub_resource type="Resource" id=6]
 script = ExtResource( 1 )
 thoughts = [ "when im typing i overthink", "when i can delete things, i will", "when i can catch myself, i will", "when im thinking i go too slow", "when im typing i censor myself", "when im typing im not genuine" ]
 good_thought = "when im typing i overthink"
-continuation = SubResource( 13 )
+continuation = SubResource( 5 )
 
-[sub_resource type="Resource" id=15]
+[sub_resource type="Resource" id=7]
 script = ExtResource( 1 )
 thoughts = [ "its easy to keep facades", "its easy to keep personas", "its easy to be isolationist", "its easy to hide away", "its easy to lurk", "its easy to disappear", "its easy to be a wallflower", "its easy to keep to myself", "its easy to stay private" ]
 good_thought = "its easy to keep facades"
-continuation = SubResource( 14 )
+continuation = SubResource( 6 )
 
-[sub_resource type="Resource" id=16]
+[sub_resource type="Resource" id=8]
 script = ExtResource( 1 )
 thoughts = [ "aside from those i know well", "aside from a small circle", "aside from a few people", "aside from my close friends" ]
 good_thought = "aside from those i know well"
-continuation = SubResource( 15 )
+continuation = SubResource( 7 )
 
-[sub_resource type="Resource" id=17]
+[sub_resource type="Resource" id=9]
 script = ExtResource( 1 )
 thoughts = [ "without much of anyone to talk to", "with nobody around", "with nobody to talk to", "without anyone to talk to" ]
 good_thought = "without much of anyone to talk to"
-continuation = SubResource( 16 )
+continuation = SubResource( 8 )
 
-[sub_resource type="Resource" id=18]
+[sub_resource type="Resource" id=10]
 script = ExtResource( 1 )
 thoughts = [ "stuck behind a keyboard", "stuck at my desk", "stuck in my corner of the house" ]
 good_thought = "stuck behind a keyboard"
-continuation = SubResource( 17 )
+continuation = SubResource( 9 )
 
-[sub_resource type="Resource" id=19]
+[sub_resource type="Resource" id=11]
 script = ExtResource( 1 )
 thoughts = [ "stuck at home" ]
 good_thought = "stuck at home"
-continuation = SubResource( 18 )
+continuation = SubResource( 10 )
 
 [resource]
 script = ExtResource( 1 )
 thoughts = [ "ive felt this way before in highschool" ]
 good_thought = "ive felt this way before in highschool"
-continuation = SubResource( 19 )
+continuation = SubResource( 11 )

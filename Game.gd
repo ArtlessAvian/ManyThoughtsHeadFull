@@ -20,6 +20,7 @@ var all_thoughts : Array = []
 var queued_thoughts : Array = []
 
 func _ready():
+	randomize()
 	requeue()
 
 func requeue():

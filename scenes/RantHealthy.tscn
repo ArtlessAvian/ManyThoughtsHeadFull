@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/thanks.png" type="Texture" id=2]
 [ext_resource path="res://Game.gd" type="Script" id=3]
 [ext_resource path="res://assets/Roboto-Regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://scenes/RantHealthyTP.tres" type="Resource" id=5]
+[ext_resource path="res://scenes/RantHealthyTP2.tres" type="Resource" id=5]
 [ext_resource path="res://assets/uwu.png" type="Texture" id=7]
 [ext_resource path="res://assets/gamer.png" type="Texture" id=8]
 [ext_resource path="res://assets/add_servr.png" type="Texture" id=9]
@@ -84,7 +84,7 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ false, true ]
 }
 tracks/2/type = "value"
@@ -317,7 +317,7 @@ margin_bottom = 132.0
 custom_fonts/font = SubResource( 2 )
 text = "ArtlessAvian
 i was going to post some junk here
-but i don't feel true anymore
+but it doesn't feel true anymore
 doesn't feel right
 oh well"
 

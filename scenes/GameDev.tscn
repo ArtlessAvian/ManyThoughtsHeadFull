@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://view/prototypes/Thoughts.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/thanks.png" type="Texture" id=2]
@@ -11,58 +11,59 @@
 [ext_resource path="res://assets/add_servr.png" type="Texture" id=9]
 [ext_resource path="res://assets/bro.png" type="Texture" id=10]
 [ext_resource path="res://assets/trace_of_ratjam.png" type="Texture" id=11]
+[ext_resource path="res://scenes/Bruh.tscn" type="PackedScene" id=12]
 [ext_resource path="res://view/Offset.tscn" type="PackedScene" id=14]
 [ext_resource path="res://view/prototypes/Messaging2.gd" type="Script" id=15]
 [ext_resource path="res://view/CurrentThought.gd" type="Script" id=16]
 
-[sub_resource type="Resource" id=10]
+[sub_resource type="Resource" id=1]
 script = ExtResource( 5 )
 thoughts = [ "i have no idea what im doing", "!!!!", "i wouldnt say things like this", "i wonder who reads these", "this isn't natural" ]
 good_thought = "!!!!"
 
-[sub_resource type="Resource" id=6]
+[sub_resource type="Resource" id=2]
 script = ExtResource( 5 )
 thoughts = [ "They're super useful!", "They're essential!", "They're useful in every project!", "They're useful in most projects!", "You'll use them in every project!", "You'll use them in most projects!", "You'll use them sometimes, I guess.", "You'll find them useful in most projects!" ]
 good_thought = "You'll use them in most projects!"
-continuation = SubResource( 10 )
+continuation = SubResource( 1 )
 
-[sub_resource type="Resource" id=7]
+[sub_resource type="Resource" id=3]
 script = ExtResource( 5 )
 thoughts = [ "on State Machines soon", "on State Machines in 30 minutes!", "in 30 minutes on State Machines, ", "soon on State Machines" ]
 good_thought = "on State Machines in 30 minutes!"
-continuation = SubResource( 6 )
+continuation = SubResource( 2 )
 
-[sub_resource type="Resource" id=8]
+[sub_resource type="Resource" id=4]
 script = ExtResource( 5 )
 thoughts = [ "I'll be hosting my workshop", "We'll be having a workshop", "We'll be hosting our workshop", "I'll be having my workshop", "We'll be hosting a workshop" ]
 good_thought = "We'll be hosting our workshop"
-continuation = SubResource( 7 )
+continuation = SubResource( 3 )
 
-[sub_resource type="Resource" id=9]
+[sub_resource type="Resource" id=5]
 script = ExtResource( 5 )
 thoughts = [ "HEYA GAMERS", "Hey @Programming", "Henlo", "yo @Programming" ]
 good_thought = "Hey @Programming"
-continuation = SubResource( 8 )
+continuation = SubResource( 4 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=6]
 size = 30
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=7]
 size = 20
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=8]
 size = 20
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=9]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationPlayer/Fade:color")
@@ -91,7 +92,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=10]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationPlayer/Fade:color")
@@ -132,7 +133,8 @@ tracks/2/keys = {
 
 [node name="Game" type="Node"]
 script = ExtResource( 3 )
-thought_process = SubResource( 9 )
+thought_process = SubResource( 5 )
+next_level = ExtResource( 12 )
 
 [node name="Order" type="Control" parent="."]
 anchor_right = 1.0
@@ -257,7 +259,7 @@ custom_constants/separation = 3
 margin_right = 240.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 6 )
 text = "Game Dev Club"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -267,27 +269,27 @@ __meta__ = {
 margin_top = 53.0
 margin_right = 240.0
 margin_bottom = 77.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 text = "# annoucements"
 
 [node name="Label2" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
 margin_top = 80.0
 margin_right = 240.0
 margin_bottom = 104.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 text = "# workshops"
 
 [node name="Label4" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
 margin_top = 107.0
 margin_right = 240.0
 margin_bottom = 131.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 
 [node name="Label6" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
 margin_top = 134.0
 margin_right = 240.0
 margin_bottom = 158.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 text = "# art"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -297,35 +299,35 @@ __meta__ = {
 margin_top = 161.0
 margin_right = 240.0
 margin_bottom = 185.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 text = "# audio"
 
 [node name="Label7" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
 margin_top = 188.0
 margin_right = 240.0
 margin_bottom = 212.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 text = "# design"
 
 [node name="Label8" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
 margin_top = 215.0
 margin_right = 240.0
 margin_bottom = 239.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 text = "# production"
 
 [node name="Label9" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
 margin_top = 242.0
 margin_right = 240.0
 margin_bottom = 266.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 text = "# programming"
 
 [node name="Label10" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
 margin_top = 269.0
 margin_right = 240.0
 margin_bottom = 293.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 text = "# writing"
 
 [node name="Chat" type="ColorRect" parent="Order/HBoxContainer"]
@@ -355,7 +357,7 @@ __meta__ = {
 margin_left = 5.0
 margin_top = 20.0
 margin_right = 631.0
-margin_bottom = 1030.0
+margin_bottom = 679.0
 grow_vertical = 0
 alignment = 2
 __meta__ = {
@@ -363,16 +365,15 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer"]
-margin_top = 351.0
 margin_right = 626.0
-margin_bottom = 356.0
+margin_bottom = 5.0
 rect_min_size = Vector2( 0, 5 )
 color = Color( 0.196078, 0.196078, 0.196078, 1 )
 
 [node name="Message6" type="MarginContainer" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer"]
-margin_top = 360.0
+margin_top = 9.0
 margin_right = 626.0
-margin_bottom = 958.0
+margin_bottom = 607.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
 custom_constants/margin_left = 5
@@ -401,7 +402,7 @@ size_flags_horizontal = 3
 margin_right = 546.0
 margin_bottom = 375.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 text = "ArtlessAvian
 well a linked list is good at push and pop
 as in thats the O(1) operations
@@ -427,7 +428,7 @@ margin_top = 564.0
 margin_right = 546.0
 margin_bottom = 588.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 text = "jk im too lazy to figure this out"
 autowrap = true
 
@@ -470,13 +471,13 @@ margin_left = 70.0
 margin_top = 18.0
 margin_right = 183.0
 margin_bottom = 42.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 8 )
 text = "ArtlessAvian"
 
 [node name="Chatbox" type="MarginContainer" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer"]
-margin_top = 962.0
+margin_top = 611.0
 margin_right = 626.0
-margin_bottom = 1010.0
+margin_bottom = 659.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
 custom_constants/margin_left = 5
@@ -493,7 +494,7 @@ margin_left = 7.0
 margin_top = 7.0
 margin_right = 609.0
 margin_bottom = 31.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
 script = ExtResource( 16 )
 
 [node name="Offset" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Chatbox/PanelContainer/Label13" instance=ExtResource( 14 )]
@@ -511,8 +512,8 @@ margin_right = -24.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Load"
-anims/Complete = SubResource( 4 )
-anims/Load = SubResource( 5 )
+anims/Complete = SubResource( 9 )
+anims/Load = SubResource( 10 )
 
 [node name="Fade" type="ColorRect" parent="AnimationPlayer"]
 anchor_right = 1.0

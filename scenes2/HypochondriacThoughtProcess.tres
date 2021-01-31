@@ -3,7 +3,6 @@
 [ext_resource path="res://ThoughtProcess.gd" type="Script" id=1]
 [ext_resource path="res://scenes2/HypochondriacSplice.tres" type="Resource" id=2]
 
-
 [sub_resource type="Resource" id=1]
 script = ExtResource( 1 )
 thoughts = [ "then when i tell people i just feel stupid", "then when i tell people i just embarrass myself" ]

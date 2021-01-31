@@ -1,0 +1,38 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://ThoughtProcess.gd" type="Script" id=1]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+thoughts = [ "idk", "insomnia", "depression", "loss of appetite", "i feel cold", "bad mood when i wake up", "feel weak", "i don't eat", "i don't exercise", "nothing is fun", "migraines", "dry skin" ]
+good_thought = "idk"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 1 )
+thoughts = [ "if i think about it too hard it doesn't seem right" ]
+good_thought = "if i think about it too hard it doesn't seem right"
+continuation = SubResource( 1 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 1 )
+thoughts = [ "everything i write feels fake", "im fine tho", "i feel like im making things up", "its probably nothing" ]
+good_thought = "everything i write feels fake"
+continuation = SubResource( 2 )
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 1 )
+thoughts = [ "i gotta write a list of symptoms", "its actually nothing", "i don't actually have anything", "watch volleyball anime w/e" ]
+good_thought = "i gotta write a list of symptoms"
+continuation = SubResource( 3 )
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 1 )
+thoughts = [ "no", "nope", "not really", "nah", "no.", "yee", "yuh", "yeah sure", "yeah", "what i want to do rn is" ]
+good_thought = "what i want to do rn is"
+continuation = SubResource( 4 )
+
+[resource]
+script = ExtResource( 1 )
+thoughts = [ "im doing literally nothing", "im moping around", "thinking about eating but its 1 AM" ]
+good_thought = "im doing literally nothing"
+continuation = SubResource( 5 )
