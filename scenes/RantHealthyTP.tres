@@ -1,0 +1,122 @@
+[gd_resource type="Resource" load_steps=21 format=2]
+
+[ext_resource path="res://ThoughtProcess.gd" type="Script" id=1]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+thoughts = [ "will i ask for help" ]
+good_thought = "will i ask for help"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 1 )
+thoughts = [ "will i be able to forgive myself" ]
+good_thought = "will i be able to forgive myself"
+continuation = SubResource( 1 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 1 )
+thoughts = [ "will i be less prideful", "will i be less stubborn", "will i be less ashamed", "will i be more cooperative", "will i be less perfectionist", "will i be more humble" ]
+good_thought = "will i be less prideful"
+continuation = SubResource( 2 )
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 1 )
+thoughts = [ "will i get better tho" ]
+good_thought = "will i get better tho"
+continuation = SubResource( 3 )
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 1 )
+thoughts = [ "yeah that was sickkkk" ]
+good_thought = "yeah that was sickkkk"
+continuation = SubResource( 4 )
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 1 )
+thoughts = [ "being at college" ]
+good_thought = "being at college"
+continuation = SubResource( 5 )
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 1 )
+thoughts = [ "tho last time i got better" ]
+good_thought = "tho last time i got better"
+continuation = SubResource( 6 )
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 1 )
+thoughts = [ "stuck at my desk", "stuck with homework", "stuck on social media", "stuck on the internet", "stuck with video calls" ]
+good_thought = "stuck at my desk"
+continuation = SubResource( 7 )
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 1 )
+thoughts = [ "im stuck at home", "im stuck with my family", "im stuck where i live" ]
+good_thought = "im stuck at home"
+continuation = SubResource( 8 )
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 1 )
+thoughts = [ "i feel the same way now" ]
+good_thought = "i feel the same way now"
+continuation = SubResource( 9 )
+
+[sub_resource type="Resource" id=11]
+script = ExtResource( 1 )
+thoughts = [ "stagnant", "bored", "sleepy ", "listless", "lugubrious", "tired", "wasting away" ]
+good_thought = "stagnant"
+continuation = SubResource( 10 )
+
+[sub_resource type="Resource" id=12]
+script = ExtResource( 1 )
+thoughts = [ "i was stuck" ]
+good_thought = "i was stuck"
+continuation = SubResource( 11 )
+
+[sub_resource type="Resource" id=13]
+script = ExtResource( 1 )
+thoughts = [ "i let things happen to me instead", "i let myself fade into the background", "i let myself disappear", "i let things be", "i let things stay the way they were", "i stayed a wallflower", "i stayed at home" ]
+good_thought = "i let things happen to me instead"
+continuation = SubResource( 12 )
+
+[sub_resource type="Resource" id=14]
+script = ExtResource( 1 )
+thoughts = [ "instead of me doing things", "instead of going out", "instead of being free", "instead of me going easy", "instead of discovering myself" ]
+good_thought = "instead of me doing things"
+continuation = SubResource( 13 )
+
+[sub_resource type="Resource" id=15]
+script = ExtResource( 1 )
+thoughts = [ "i didnt control my future", "i didnt try to stick out", "i did all i had to do", "i did my routine day after day", "i did my routine like a zombie" ]
+good_thought = "i didnt control my future"
+continuation = SubResource( 14 )
+
+[sub_resource type="Resource" id=16]
+script = ExtResource( 1 )
+thoughts = [ "by highschool i became more passive", "by highschool i stopped caring", "by highschool i became very self aware" ]
+good_thought = "by highschool i became more passive"
+continuation = SubResource( 15 )
+
+[sub_resource type="Resource" id=17]
+script = ExtResource( 1 )
+thoughts = [ "well thats an extreme example", "well thats a bad example", "well middleschoolers are kinda unhinged", "well i dont wish to be a middleschooler" ]
+good_thought = "well thats an extreme example"
+continuation = SubResource( 16 )
+
+[sub_resource type="Resource" id=18]
+script = ExtResource( 1 )
+thoughts = [ "i had no filter way back in middleschool" ]
+good_thought = "i had no filter way back in middleschool"
+continuation = SubResource( 17 )
+
+[sub_resource type="Resource" id=19]
+script = ExtResource( 1 )
+thoughts = [ "now im so lost", "now im so self-conscious" ]
+good_thought = "now im so lost"
+continuation = SubResource( 18 )
+
+[resource]
+script = ExtResource( 1 )
+thoughts = [ "i feel like i used to be braver" ]
+good_thought = "i feel like i used to be braver"
+continuation = SubResource( 19 )

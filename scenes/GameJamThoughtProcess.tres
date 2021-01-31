@@ -1,26 +1,20 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://ThoughtProcess.gd" type="Script" id=1]
 
-[sub_resource type="Resource" id=2]
+[sub_resource type="Resource" id=1]
 script = ExtResource( 1 )
 thoughts = [ "Indecision", "Social Anxiety Simulator", "No Thoughts Head Empty", "Many Thoughts Head Full", "Untitled Document" ]
 good_thought = "Many Thoughts Head Full"
 
-[sub_resource type="Resource" id=3]
+[sub_resource type="Resource" id=2]
 script = ExtResource( 1 )
-thoughts = [ "Lost for words, Lost in thought" ]
-good_thought = "Lost for words, Lost in thought"
-continuation = SubResource( 2 )
-
-[sub_resource type="Resource" id=1]
-script = ExtResource( 1 )
-thoughts = [ "Lost my humanity", "Lost my innocence", "Lost my rhythm", "Lost my sanity", "Lost my sense of direction", "Lost my motivation", "Lost my train of thought", "Lost my identity", "Lost my marbles", "Lost my patience", "Lost in space", "Lost my friend", "Lost my way" ]
-good_thought = "Lost my train of thought"
-continuation = SubResource( 3 )
+thoughts = [ "Lost my humanity", "Lost for words", "Lost my innocence", "Lost my rhythm", "Lost my sanity", "Lost my sense of direction", "Lost my motivation", "Lost in thought", "Lost my identity", "Lost my marbles", "Lost my patience", "Lost in space", "Lost my friend", "Lost my way", "Lost in a maze", "Lost in a city", "Lost in the woods" ]
+good_thought = "Lost in thought"
+continuation = SubResource( 1 )
 
 [resource]
 script = ExtResource( 1 )
 thoughts = [ "Lost and Found" ]
 good_thought = "Lost and Found"
-continuation = SubResource( 1 )
+continuation = SubResource( 2 )

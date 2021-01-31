@@ -2,55 +2,55 @@
 
 [ext_resource path="res://ThoughtProcess.gd" type="Script" id=1]
 
-[sub_resource type="Resource" id=8]
+[sub_resource type="Resource" id=1]
 script = ExtResource( 1 )
 thoughts = [ "hello?" ]
 good_thought = "hello?"
 
-[sub_resource type="Resource" id=6]
+[sub_resource type="Resource" id=2]
 script = ExtResource( 1 )
 thoughts = [ "im not really good at this game anyways lmao", "my b :P", "ig you can look it up online?" ]
 good_thought = "ig you can look it up online?"
-continuation = SubResource( 8 )
-
-[sub_resource type="Resource" id=7]
-script = ExtResource( 1 )
-thoughts = [ "aaaaaaaaaaaaaaa", "pain", "oof", "sadflkjasdflk", "whomst'd've" ]
-good_thought = "oof"
-continuation = SubResource( 6 )
-
-[sub_resource type="Resource" id=2]
-script = ExtResource( 1 )
-thoughts = [ "damn idk" ]
-good_thought = "damn idk"
-continuation = SubResource( 7 )
+continuation = SubResource( 1 )
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 1 )
-thoughts = [ "jossy is hella wack lmaoooo", "so jossy is the only character that has armor which means", "eh, no one plays jossy anyways lmao", "jossy is kind of a meme pick tho so w/e", "damn idk", "ig when i play other good players they uhhhh", "asdfjkl; my b", "bruh", "oof", "so, um, maybe you could", "/shrug", "i literally don't play this game btw", ":WeirdChamp:" ]
-good_thought = "ig when i play other good players they uhhhh"
+thoughts = [ "aaaaaaaaaaaaaaa", "pain", "oof", "sadflkjasdflk", "whomst'd've" ]
+good_thought = "oof"
 continuation = SubResource( 2 )
 
 [sub_resource type="Resource" id=4]
 script = ExtResource( 1 )
-thoughts = [ "wait ig that doesn't really work against jossy" ]
-good_thought = "wait ig that doesn't really work against jossy"
+thoughts = [ "damn idk" ]
+good_thought = "damn idk"
 continuation = SubResource( 3 )
 
 [sub_resource type="Resource" id=5]
 script = ExtResource( 1 )
-thoughts = [ "menacingly", "like damn did this game already give you arthritis", "so im getting back on stage freeeee", "idk how mars works lmao", "like, just jump off stage and hit me", "you should be able to challenge me offstage" ]
-good_thought = "you should be able to challenge me offstage"
+thoughts = [ "jossy is hella wack lmaoooo", "so jossy is the only character that has armor which means", "eh, no one plays jossy anyways lmao", "jossy is kind of a meme pick tho so w/e", "damn idk", "ig when i play other good players they uhhhh", "asdfjkl; my b", "bruh", "oof", "so, um, maybe you could", "/shrug", "i literally don't play this game btw", ":WeirdChamp:" ]
+good_thought = "ig when i play other good players they uhhhh"
 continuation = SubResource( 4 )
 
-[sub_resource type="Resource" id=1]
+[sub_resource type="Resource" id=6]
+script = ExtResource( 1 )
+thoughts = [ "wait ig that doesn't really work against jossy" ]
+good_thought = "wait ig that doesn't really work against jossy"
+continuation = SubResource( 5 )
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 1 )
+thoughts = [ "menacingly", "like damn did this game already give you arthritis", "so im getting back on stage freeeee", "idk how mars works lmao", "like, just jump off stage and hit me", "you should be able to challenge me offstage" ]
+good_thought = "you should be able to challenge me offstage"
+continuation = SubResource( 6 )
+
+[sub_resource type="Resource" id=8]
 script = ExtResource( 1 )
 thoughts = [ "one thing i noticed was that", "i see you just standing there a lot", "are you intentionally standing in place lol", "i remember seeing you kinda idling on a platform", "i really should go eat tho cya" ]
 good_thought = "i see you just standing there a lot"
-continuation = SubResource( 5 )
+continuation = SubResource( 7 )
 
 [resource]
 script = ExtResource( 1 )
 thoughts = [ "i wasn't really paying attention", "oh uhh", "idk lmaoo", "maybe work on movement?", "the sun was in my controller :)", "movement could be better", "you get hella stuck on platforms", "i was going to go eat :P" ]
 good_thought = "maybe work on movement?"
-continuation = SubResource( 1 )
+continuation = SubResource( 8 )

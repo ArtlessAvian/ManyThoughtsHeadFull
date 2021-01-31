@@ -1,0 +1,266 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://view/prototypes/ThoughtsRant.gd" type="Script" id=1]
+[ext_resource path="res://assets/Roboto-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://RantDoc.gd" type="Script" id=3]
+[ext_resource path="res://scenes/RantDocTP.tres" type="Resource" id=4]
+[ext_resource path="res://assets/thoughtbubble.png" type="Texture" id=5]
+[ext_resource path="res://view/Offset.tscn" type="PackedScene" id=6]
+[ext_resource path="res://view/CurrentThought.gd" type="Script" id=7]
+[ext_resource path="res://view/prototypes/Brainstorming.gd" type="Script" id=8]
+[ext_resource path="res://assets/werd.png" type="Texture" id=9]
+[ext_resource path="res://assets/uwu.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 4
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 3
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 120
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=5]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Fade2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "goto_next_level"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Fade2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="Game" type="Node"]
+script = ExtResource( 3 )
+thought_process = ExtResource( 4 )
+
+[node name="Brainstorming" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+base_color = Color( 0.0429688, 0.0429688, 0.0429688, 1 )
+
+[node name="Background" type="ColorRect" parent="Brainstorming"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.913725, 0.913725, 0.913725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleBar" type="ColorRect" parent="Brainstorming"]
+anchor_right = 1.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Brainstorming/TitleBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Brainstorming/TitleBar/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 9 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Brainstorming/TitleBar/HBoxContainer"]
+margin_left = 80.0
+margin_right = 329.0
+margin_bottom = 62.0
+size_flags_horizontal = 2
+
+[node name="RichTextLabel" type="Label" parent="Brainstorming/TitleBar/HBoxContainer/VBoxContainer"]
+margin_right = 249.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.34902, 0.34902, 0.34902, 1 )
+text = "Dont Open Ever"
+
+[node name="RichTextLabel2" type="Label" parent="Brainstorming/TitleBar/HBoxContainer/VBoxContainer"]
+margin_top = 40.0
+margin_right = 249.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "File   Edit   View   Insert   Format"
+
+[node name="PFP" type="TextureRect" parent="Brainstorming/TitleBar/HBoxContainer"]
+margin_left = 924.0
+margin_right = 984.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 10 )
+
+[node name="Page" type="ColorRect" parent="Brainstorming"]
+anchor_left = 0.2
+anchor_right = 0.8
+anchor_bottom = 1.0
+margin_top = 150.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Brainstorming/Page"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+size_flags_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="Label" parent="Brainstorming/Page/VBoxContainer"]
+margin_right = 574.0
+margin_bottom = 5.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "aaaaaaaaaaaaaaa"
+
+[node name="CurrentThought" type="Label" parent="Brainstorming/Page/VBoxContainer"]
+margin_top = 9.0
+margin_right = 574.0
+margin_bottom = 13.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+autowrap = true
+script = ExtResource( 7 )
+
+[node name="Offset" parent="Brainstorming/Page/VBoxContainer/CurrentThought" instance=ExtResource( 6 )]
+
+[node name="NinePatch" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 214.0
+margin_top = 292.0
+margin_right = -215.0
+margin_bottom = -72.0
+texture = ExtResource( 5 )
+patch_margin_left = 38
+patch_margin_top = 24
+patch_margin_right = 22
+patch_margin_bottom = 35
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="NinePatch"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 37.0
+margin_top = 15.0
+margin_right = -24.0
+margin_bottom = -25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatch/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Load"
+anims/Complete = SubResource( 5 )
+anims/Load = SubResource( 6 )
+
+[node name="Fade2" type="ColorRect" parent="AnimationPlayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.396851
+margin_bottom = -0.396851
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="finish" from="." to="." method="_on_Game_finish"]
+[connection signal="found_bad_thought" from="." to="NinePatch" method="_on_Game_found_bad_thought"]
+[connection signal="new_thought" from="." to="NinePatch" method="_on_Game_new_thought"]
+[connection signal="submit_good_thought" from="." to="Brainstorming" method="_on_Game_submit_good_thought"]
+[connection signal="submit_good_thought" from="." to="NinePatch" method="_on_Game_submit_good_thought"]
+[connection signal="update_thought" from="." to="Brainstorming" method="_on_Game_update_thought"]

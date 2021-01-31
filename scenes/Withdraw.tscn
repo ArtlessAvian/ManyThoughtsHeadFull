@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://view/prototypes/messenjer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://view/prototypes/Thoughts.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game.gd" type="Script" id=3]
+[ext_resource path="res://ThoughtProcess.gd" type="Script" id=4]
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 4 )
+thoughts = [ "im pretty sure my ap physics credit applies", "i think my ap physics credits applies", "" ]
+good_thought = "im pretty sure my ap physics credit applies"
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 4 )
+thoughts = [ "i've been thinking about it all day", "i should've done it way sooner", "i think it might be too late tho", "eh its probably nothing" ]
+good_thought = "i've been thinking about it all day"
+continuation = SubResource( 7 )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 4 )
+thoughts = [ "ask some people about ", "watch volleyball anime w/e" ]
+good_thought = "i gotta email my professor"
+continuation = SubResource( 8 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 4 )
+thoughts = [ "no", "not really", "yeah sure", "yeah", "what i want to do rn is" ]
+good_thought = "what i want to do rn is"
+continuation = SubResource( 2 )
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 4 )
+thoughts = [ "im doing literally nothing", "im moping around", "thinking about eating but its 1 AM" ]
+good_thought = "im doing literally nothing"
+continuation = SubResource( 3 )
+
+[sub_resource type="Animation" id=5]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "goto_next_level"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NinePatch:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Control")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+
+[node name="Game" type="Node"]
+script = ExtResource( 3 )
+thought_process = SubResource( 4 )
+
+[node name="Control" parent="." instance=ExtResource( 1 )]
+
+[node name="AllThoughts" parent="." instance=ExtResource( 2 )]
+margin_left = 782.0
+margin_top = 212.0
+stuff = NodePath("../../Game/AllThoughts/Control")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Load"
+anims/Complete = SubResource( 5 )
+anims/Load = SubResource( 6 )
+
+[node name="Fade" type="ColorRect" parent="AnimationPlayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.18921
+margin_bottom = -1.18921
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="finish" from="." to="." method="_on_Game_finish"]
+[connection signal="found_bad_thought" from="." to="AllThoughts" method="_on_Game_found_bad_thought"]
+[connection signal="new_thought" from="." to="AllThoughts" method="_on_Game_new_thought"]
+[connection signal="submit_good_thought" from="." to="Control" method="_on_Game_submit_good_thought"]
+[connection signal="submit_good_thought" from="." to="AllThoughts" method="_on_Game_submit_good_thought"]
+[connection signal="update_thought" from="." to="Control" method="_on_Game_update_thought"]
+
+[editable path="Control"]

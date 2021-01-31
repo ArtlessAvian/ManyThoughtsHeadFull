@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://ThoughtProcess.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+thoughts = [ "Im a pretender. I hide from everyone!! I am not genuine with any one , not even to my self! I hate being antisocial. Asocial. I never learned to be social. And I never will at this rate. My mental filter is too strong. Nothing gets through ever. What a waste of brainpower, thirty minutes of jst sitting there agonizing about nothing. A question in lecture. A message on discord. What a waste. I wish i could do this junk effortlessly but no its just dumb. I can chat with like two people. Figuratively. I cant trust anyone. I dont let anyone be my friend. It sucks. Its isolating. Its lonely. I wish i had friends. In the past i had friends. But then they all went away. But then, i was genuine. Why did i become so hardened. So entrenched in this asociality. Like idk i think i peaked already.  Or it feels that way. I wish i improved. I wish i was perfect so i didnt need to improve." ]
+good_thought = "skip"

@@ -4,19 +4,19 @@
 [ext_resource path="res://view/prototypes/Brainstorming.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game.gd" type="Script" id=3]
 [ext_resource path="res://scenes/GameJamThoughtProcess.tres" type="Resource" id=4]
-[ext_resource path="res://scenes/Friendos.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Friendos.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Complete"
-length = 2.0
+length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimationPlayer/Fade:color")
+tracks/0/path = NodePath("AnimationPlayer/Fade2:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1, 1.5 ),
+"times": PoolRealArray( 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
@@ -28,7 +28,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1.8 ),
+"times": PoolRealArray( 1.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -36,56 +36,19 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Load"
-length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimationPlayer/Fade:color")
+tracks/0/path = NodePath("AnimationPlayer/Fade2:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/ColorRect2:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Message8:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("NinePatch:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
 }
 
 [node name="Game" type="Node"]
@@ -108,9 +71,9 @@ margin_right = -24.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Load"
 anims/Complete = SubResource( 1 )
-anims/Load = SubResource( 3 )
+anims/Load = SubResource( 2 )
 
-[node name="Fade" type="ColorRect" parent="AnimationPlayer"]
+[node name="Fade2" type="ColorRect" parent="AnimationPlayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )

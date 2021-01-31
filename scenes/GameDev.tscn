@@ -1,0 +1,533 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://view/prototypes/Thoughts.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/thanks.png" type="Texture" id=2]
+[ext_resource path="res://Game.gd" type="Script" id=3]
+[ext_resource path="res://assets/Roboto-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://ThoughtProcess.gd" type="Script" id=5]
+[ext_resource path="res://assets/wrong answer.png" type="Texture" id=6]
+[ext_resource path="res://assets/uwu.png" type="Texture" id=7]
+[ext_resource path="res://assets/gamer.png" type="Texture" id=8]
+[ext_resource path="res://assets/add_servr.png" type="Texture" id=9]
+[ext_resource path="res://assets/bro.png" type="Texture" id=10]
+[ext_resource path="res://assets/trace_of_ratjam.png" type="Texture" id=11]
+[ext_resource path="res://view/Offset.tscn" type="PackedScene" id=14]
+[ext_resource path="res://view/prototypes/Messaging2.gd" type="Script" id=15]
+[ext_resource path="res://view/CurrentThought.gd" type="Script" id=16]
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 5 )
+thoughts = [ "i have no idea what im doing", "!!!!", "i wouldnt say things like this", "i wonder who reads these", "this isn't natural" ]
+good_thought = "!!!!"
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 5 )
+thoughts = [ "They're super useful!", "They're essential!", "They're useful in every project!", "They're useful in most projects!", "You'll use them in every project!", "You'll use them in most projects!", "You'll use them sometimes, I guess.", "You'll find them useful in most projects!" ]
+good_thought = "You'll use them in most projects!"
+continuation = SubResource( 10 )
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 5 )
+thoughts = [ "on State Machines soon", "on State Machines in 30 minutes!", "in 30 minutes on State Machines, ", "soon on State Machines" ]
+good_thought = "on State Machines in 30 minutes!"
+continuation = SubResource( 6 )
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 5 )
+thoughts = [ "I'll be hosting my workshop", "We'll be having a workshop", "We'll be hosting our workshop", "I'll be having my workshop", "We'll be hosting a workshop" ]
+good_thought = "We'll be hosting our workshop"
+continuation = SubResource( 7 )
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 5 )
+thoughts = [ "HEYA GAMERS", "Hey @Programming", "Henlo", "yo @Programming" ]
+good_thought = "Hey @Programming"
+continuation = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=4]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "goto_next_level"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/ColorRect2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("NinePatch:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="Game" type="Node"]
+script = ExtResource( 3 )
+thought_process = SubResource( 9 )
+
+[node name="Order" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+current_path = NodePath("HBoxContainer/Chat/MarginContainer/VBoxContainer/Chatbox/PanelContainer/Label13")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Order"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Serverbar" type="ColorRect" parent="Order/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 0
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Order/HBoxContainer/Serverbar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Order/HBoxContainer/Serverbar/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 80.0
+margin_bottom = 580.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Order/HBoxContainer/Serverbar/MarginContainer/VBoxContainer"]
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 10 )
+
+[node name="TextureRect4" type="TextureRect" parent="Order/HBoxContainer/Serverbar/MarginContainer/VBoxContainer"]
+margin_top = 75.0
+margin_right = 60.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="Order/HBoxContainer/Serverbar/MarginContainer/VBoxContainer"]
+margin_top = 150.0
+margin_right = 60.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 11 )
+
+[node name="TextureRect3" type="TextureRect" parent="Order/HBoxContainer/Serverbar/MarginContainer/VBoxContainer"]
+margin_top = 225.0
+margin_right = 60.0
+margin_bottom = 285.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 2 )
+
+[node name="TextureRect5" type="TextureRect" parent="Order/HBoxContainer/Serverbar/MarginContainer/VBoxContainer"]
+margin_top = 300.0
+margin_right = 60.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 7 )
+
+[node name="TextureRect6" type="TextureRect" parent="Order/HBoxContainer/Serverbar/MarginContainer/VBoxContainer"]
+margin_top = 375.0
+margin_right = 60.0
+margin_bottom = 435.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 9 )
+
+[node name="Sidebar" type="ColorRect" parent="Order/HBoxContainer"]
+margin_left = 104.0
+margin_right = 384.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 280, 0 )
+size_flags_horizontal = 0
+color = Color( 0.219608, 0.219608, 0.219608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Order/HBoxContainer/Sidebar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Order/HBoxContainer/Sidebar/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 260.0
+margin_bottom = 580.0
+custom_constants/separation = 3
+
+[node name="Label3" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+margin_right = 240.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = SubResource( 1 )
+text = "Game Dev Club"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+margin_top = 53.0
+margin_right = 240.0
+margin_bottom = 77.0
+custom_fonts/font = SubResource( 2 )
+text = "# annoucements"
+
+[node name="Label2" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+margin_top = 80.0
+margin_right = 240.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 2 )
+text = "# workshops"
+
+[node name="Label4" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+margin_top = 107.0
+margin_right = 240.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="Label6" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+margin_top = 134.0
+margin_right = 240.0
+margin_bottom = 158.0
+custom_fonts/font = SubResource( 2 )
+text = "# art"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+margin_top = 161.0
+margin_right = 240.0
+margin_bottom = 185.0
+custom_fonts/font = SubResource( 2 )
+text = "# audio"
+
+[node name="Label7" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+margin_top = 188.0
+margin_right = 240.0
+margin_bottom = 212.0
+custom_fonts/font = SubResource( 2 )
+text = "# design"
+
+[node name="Label8" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+margin_top = 215.0
+margin_right = 240.0
+margin_bottom = 239.0
+custom_fonts/font = SubResource( 2 )
+text = "# production"
+
+[node name="Label9" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+margin_top = 242.0
+margin_right = 240.0
+margin_bottom = 266.0
+custom_fonts/font = SubResource( 2 )
+text = "# programming"
+
+[node name="Label10" type="Label" parent="Order/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+margin_top = 269.0
+margin_right = 240.0
+margin_bottom = 293.0
+custom_fonts/font = SubResource( 2 )
+text = "# writing"
+
+[node name="Chat" type="ColorRect" parent="Order/HBoxContainer"]
+margin_left = 388.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.341176, 0.341176, 0.341176, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Order/HBoxContainer/Chat"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 20
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Order/HBoxContainer/Chat/MarginContainer"]
+margin_left = 5.0
+margin_top = 20.0
+margin_right = 631.0
+margin_bottom = 1030.0
+grow_vertical = 0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer"]
+margin_top = 351.0
+margin_right = 626.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 0, 5 )
+color = Color( 0.196078, 0.196078, 0.196078, 1 )
+
+[node name="Message6" type="MarginContainer" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer"]
+margin_top = 360.0
+margin_right = 626.0
+margin_bottom = 958.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Message6"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 621.0
+margin_bottom = 593.0
+custom_constants/separation = 10
+
+[node name="TextureRect7" type="TextureRect" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Message6/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 588.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 7 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Message6/HBoxContainer"]
+margin_left = 70.0
+margin_right = 616.0
+margin_bottom = 588.0
+size_flags_horizontal = 3
+
+[node name="Label12" type="Label" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Message6/HBoxContainer/VBoxContainer"]
+margin_right = 546.0
+margin_bottom = 375.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
+text = "ArtlessAvian
+well a linked list is good at push and pop
+as in thats the O(1) operations
+tho itd be slow to traverse to the end of the list.
+oh wait maybe you can use a dictionary to pair the keys to the linked list nodes
+YOOO
+then you can access the middle of the list in O(1) to remove and push them to the front
+but then to get to the end of the list thats still O(n)
+maybe make an extra link between the front and back, so a circular linked list
+then you can get from the front to the back in O(1)
+literally making an account to test my solution"
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Message6/HBoxContainer/VBoxContainer"]
+margin_top = 379.0
+margin_right = 546.0
+margin_bottom = 560.0
+texture = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="Label13" type="Label" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Message6/HBoxContainer/VBoxContainer"]
+margin_top = 564.0
+margin_right = 546.0
+margin_bottom = 588.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
+text = "jk im too lazy to figure this out"
+autowrap = true
+
+[node name="ColorRect2" type="ColorRect" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 563.0
+margin_right = 626.0
+margin_bottom = 568.0
+rect_min_size = Vector2( 0, 5 )
+color = Color( 0.196078, 0.196078, 0.196078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message9" type="MarginContainer" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 498.0
+margin_right = 626.0
+margin_bottom = 568.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Message9"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 621.0
+margin_bottom = 65.0
+custom_constants/separation = 10
+
+[node name="TextureRect7" type="TextureRect" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Message9/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 7 )
+
+[node name="Label12" type="Label" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Message9/HBoxContainer"]
+margin_left = 70.0
+margin_top = 18.0
+margin_right = 183.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 3 )
+text = "ArtlessAvian"
+
+[node name="Chatbox" type="MarginContainer" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer"]
+margin_top = 962.0
+margin_right = 626.0
+margin_bottom = 1010.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Chatbox"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 621.0
+margin_bottom = 43.0
+
+[node name="Label13" type="Label" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Chatbox/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 609.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 2 )
+script = ExtResource( 16 )
+
+[node name="Offset" parent="Order/HBoxContainer/Chat/MarginContainer/VBoxContainer/Chatbox/PanelContainer/Label13" instance=ExtResource( 14 )]
+
+[node name="NinePatch" parent="." instance=ExtResource( 1 )]
+visible = false
+margin_left = 2.0
+margin_top = 61.0
+margin_right = -647.0
+margin_bottom = -86.0
+
+[node name="Control" parent="NinePatch" index="0"]
+margin_left = 37.0
+margin_right = -24.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Load"
+anims/Complete = SubResource( 4 )
+anims/Load = SubResource( 5 )
+
+[node name="Fade" type="ColorRect" parent="AnimationPlayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.18921
+margin_bottom = -1.18921
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="finish" from="." to="." method="_on_Game_finish"]
+[connection signal="found_bad_thought" from="." to="NinePatch" method="_on_Game_found_bad_thought"]
+[connection signal="new_thought" from="." to="NinePatch" method="_on_Game_new_thought"]
+[connection signal="submit_good_thought" from="." to="NinePatch" method="_on_Game_submit_good_thought"]
+[connection signal="submit_good_thought" from="." to="Order" method="_on_Game_submit_good_thought"]
+[connection signal="update_thought" from="." to="Order" method="_on_Game_update_thought"]
+
+[editable path="NinePatch"]
