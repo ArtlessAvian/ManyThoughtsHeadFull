@@ -46,7 +46,7 @@ continuation = SubResource( 6 )
 [sub_resource type="Resource" id=8]
 script = ExtResource( 1 )
 thoughts = [ "aside from those i know well", "aside from a small circle", "aside from a few people", "aside from my close friends" ]
-good_thought = "aside from those i know well"
+good_thought = "aside from my close friends"
 continuation = SubResource( 7 )
 
 [sub_resource type="Resource" id=9]

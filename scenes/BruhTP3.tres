@@ -27,7 +27,7 @@ continuation = SubResource( 3 )
 
 [sub_resource type="Resource" id=5]
 script = ExtResource( 1 )
-thoughts = [ "no", "nope", "not really", "nah", "no.", "yee", "yuh", "yeah sure", "yeah", "what i want to do rn is" ]
+thoughts = [ "id rather not", "nope", "not really", "nah", "no.", "yee", "yuh", "yeah sure", "yeah", "what i want to do rn is" ]
 good_thought = "what i want to do rn is"
 continuation = SubResource( 4 )
 

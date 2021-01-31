@@ -24,6 +24,7 @@ func _ready():
 	requeue()
 
 func requeue():
+	timer = 5
 	if thought_process != null:
 		queued_thoughts = thought_process.thoughts.duplicate();
 		if shuffle:
