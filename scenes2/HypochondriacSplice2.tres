@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://ThoughtProcess.gd" type="Script" id=1]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+thoughts = [ "maybe" ]
+good_thought = "maybe"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 1 )
+thoughts = [ "oops, them meaning people", "that doesn't make sense", "wat", "seems counterproductive" ]
+good_thought = "oops, them meaning people"
+continuation = SubResource( 1 )
+
+[resource]
+script = ExtResource( 1 )
+thoughts = [ "i make mistakes and i learn to avoid them" ]
+good_thought = "i make mistakes and i learn to avoid the cause"
+continuation = SubResource( 2 )

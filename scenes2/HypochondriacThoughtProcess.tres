@@ -1,0 +1,47 @@
+[gd_resource type="Resource" load_steps=9 format=2]
+
+[ext_resource path="res://ThoughtProcess.gd" type="Script" id=1]
+[ext_resource path="res://scenes2/HypochondriacSplice.tres" type="Resource" id=2]
+
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+thoughts = [ "then when i tell people i just feel stupid", "then when i tell people i just embarrass myself" ]
+good_thought = "then when i tell people i just embarrass myself when i tell people"
+continuation = ExtResource( 2 )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 1 )
+thoughts = [ "idk how i can get so worked up over nothing", "mom and dad also were freaking out", "it'd be easier if i was actually diagnosed with something" ]
+good_thought = "idk how i can get so worked up over nothing"
+continuation = SubResource( 1 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 1 )
+thoughts = [ "no, i didn't", "yes, i did." ]
+good_thought = "no, i didn't"
+continuation = SubResource( 2 )
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 1 )
+thoughts = [ "i already knew i should" ]
+good_thought = "i already knew i should"
+continuation = SubResource( 3 )
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 1 )
+thoughts = [ "he said that i should just come back after 2-3 months", "he basically told me to calm tf down" ]
+good_thought = "he said that i should just come back after 2-3 months"
+continuation = SubResource( 4 )
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 1 )
+thoughts = [ "i regret sending anything", "i feel so dumb", "ughhhhhhhh" ]
+good_thought = "i regret sending anything"
+continuation = SubResource( 5 )
+
+[resource]
+script = ExtResource( 1 )
+thoughts = [ "i got a message back from the doctor" ]
+good_thought = "i got a message back from the doctor"
+continuation = SubResource( 6 )

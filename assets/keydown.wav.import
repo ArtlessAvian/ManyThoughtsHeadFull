@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/keydown.wav-d4e6335de74354545748061f19de8771.sample"
+
+[deps]
+
+source_file="res://assets/keydown.wav"
+dest_files=[ "res://.import/keydown.wav-d4e6335de74354545748061f19de8771.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

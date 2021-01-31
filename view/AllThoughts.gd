@@ -35,18 +35,20 @@ func _on_Game_new_thought(game, content):
 	copy.setup(content, color)
 	contentToThought[content] = copy
 	
-	yield(get_tree().create_timer(randf() * 2 + 0.1), "timeout")
-	if local_batch != batch:
-		return
+	if game != null:
+		yield(get_tree().create_timer(randf() * 2 + 1), "timeout")
+		if local_batch != batch:
+			return
 	
 	var thing = get_node("Control")
 	
 	thing.add_child(copy)
 	
-	var order = randi() % thing.get_child_count();
-	thing.move_child(copy, order)
-	copy.anchor_top = (order + 1) * 1.0/(thing.get_child_count() + 1)
-	copy.anchor_bottom = copy.anchor_top
+	if game != null:
+		var order = randi() % thing.get_child_count();
+		thing.move_child(copy, order)
+		copy.anchor_top = (order + 1) * 1.0/(thing.get_child_count() + 1)
+		copy.anchor_bottom = copy.anchor_top
 	
 	if len(period_offset) < thing.get_child_count():
 		period_offset.push_back(randf() * PI * 2)

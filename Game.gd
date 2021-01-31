@@ -116,3 +116,6 @@ func is_incorrect():
 
 func _on_Game_finish():
 	$AnimationPlayer.play("Complete")
+
+func _on_Game_update_thought():
+	pass # Replace with function body.

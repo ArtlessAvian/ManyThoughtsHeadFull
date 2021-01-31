@@ -24,6 +24,10 @@ config/name="Many Thoughts Head Full"
 run/main_scene="res://scenes/GameJam.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Aaaa="*res://aaaa.tscn"
+
 [display]
 
 window/size/resizable=false

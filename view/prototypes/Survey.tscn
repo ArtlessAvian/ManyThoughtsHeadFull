@@ -1,0 +1,139 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Roboto-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Roboto.tres" type="DynamicFont" id=2]
+[ext_resource path="res://view/prototypes/Brainstorming.gd" type="Script" id=3]
+[ext_resource path="res://view/CurrentThought.gd" type="Script" id=4]
+[ext_resource path="res://view/Offset.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="Brainstorming" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+base_color = Color( 0.0429688, 0.0429688, 0.0429688, 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.913725, 0.913725, 0.913725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Page" type="ColorRect" parent="."]
+anchor_left = 0.2
+anchor_right = 0.8
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Page"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page/VBoxContainer3"]
+margin_right = 614.0
+margin_bottom = 62.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="Label" parent="Page/VBoxContainer3/VBoxContainer2"]
+margin_right = 614.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "What extracurricular activities do you do?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentThought" type="Label" parent="Page/VBoxContainer3/VBoxContainer2"]
+margin_top = 40.0
+margin_bottom = 62.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page/VBoxContainer3"]
+margin_top = 66.0
+margin_right = 614.0
+margin_bottom = 167.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="Label" parent="Page/VBoxContainer3/VBoxContainer"]
+margin_right = 614.0
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "What are your hobbies? Your personality?
+What do you enjoy doing?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentThought" type="Label" parent="Page/VBoxContainer3/VBoxContainer"]
+margin_top = 79.0
+margin_bottom = 101.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Offset" parent="Page/VBoxContainer3/VBoxContainer/CurrentThought" instance=ExtResource( 5 )]
+margin_top = -105.0
+margin_bottom = -105.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Page/VBoxContainer3"]
+margin_top = 171.0
+margin_right = 614.0
+margin_bottom = 233.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="Label" parent="Page/VBoxContainer3/VBoxContainer3"]
+margin_right = 614.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "What do you look for in a roommate?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentThought" type="Label" parent="Page/VBoxContainer3/VBoxContainer3"]
+margin_top = 40.0
+margin_bottom = 62.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

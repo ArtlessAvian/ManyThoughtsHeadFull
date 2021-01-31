@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://ThoughtProcess.gd" type="Script" id=1]
+[ext_resource path="res://scenes2/HypochondriacSplice2.tres" type="Resource" id=2]
+
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+thoughts = [ "and i still suck", "and i'm not learning anything", "and i'm still garbo", "and i take too long", "and i waste everyones time", "and i'd like to disappear" ]
+good_thought = "and i'm not learning anything"
+continuation = ExtResource( 2 )
+
+[resource]
+script = ExtResource( 1 )
+thoughts = [ "its tiring", "it sucks", "it pisses me off" ]
+good_thought = "its tiring"
+continuation = SubResource( 1 )
