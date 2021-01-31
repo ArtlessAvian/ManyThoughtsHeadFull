@@ -36,7 +36,7 @@ func _on_Game_new_thought(game, content):
 	contentToThought[content] = copy
 	
 	if game != null:
-		yield(get_tree().create_timer(randf() * 2 + 1), "timeout")
+		yield(get_tree().create_timer(randf() * 0.2 + 0.5), "timeout")
 		if local_batch != batch:
 			return
 	

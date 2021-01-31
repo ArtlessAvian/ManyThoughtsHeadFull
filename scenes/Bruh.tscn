@@ -85,7 +85,8 @@ next_level = ExtResource( 5 )
 replies = [ "Do you want to watch volleyball anime", null, "To tell the doctor tomorrow yea", "?", "Maybe you could tell me something?", "Volleyball anime?", null ]
 
 [node name="AllThoughts" parent="." instance=ExtResource( 2 )]
-margin_left = 782.0
+anchor_left = 1.0
+margin_left = -250.0
 margin_top = 212.0
 stuff = NodePath("../../Game/AllThoughts/Control")
 
@@ -106,8 +107,8 @@ __meta__ = {
 [connection signal="finish" from="." to="." method="_on_Game_finish"]
 [connection signal="found_bad_thought" from="." to="AllThoughts" method="_on_Game_found_bad_thought"]
 [connection signal="new_thought" from="." to="AllThoughts" method="_on_Game_new_thought"]
-[connection signal="submit_good_thought" from="." to="AllThoughts" method="_on_Game_submit_good_thought"]
 [connection signal="submit_good_thought" from="." to="Control" method="_on_Game_submit_good_thought"]
+[connection signal="submit_good_thought" from="." to="AllThoughts" method="_on_Game_submit_good_thought"]
 [connection signal="update_thought" from="." to="Control" method="_on_Game_update_thought"]
 
 [editable path="Control"]
