@@ -67,6 +67,7 @@ func _input(event):
 	else:
 		if control_a_last:
 			current_thought = char(event.unicode)
+			control_a_last = false
 		else:
 			current_thought = current_thought + char(event.unicode)
 		if current_thought in all_thoughts:
