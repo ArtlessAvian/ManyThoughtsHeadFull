@@ -19,9 +19,15 @@ var current_thought : String = ""
 var all_thoughts : Array = []
 var queued_thoughts : Array = []
 
+export var first_level : bool
+
 func _ready():
 	randomize()
 	requeue()
+	
+	if first_level:
+		current_thought = "Lost and "
+		emit_signal("update_thought", self, current_thought)
 
 func requeue():
 	timer = 5

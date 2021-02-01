@@ -55,6 +55,7 @@ tracks/0/keys = {
 script = ExtResource( 3 )
 thought_process = ExtResource( 4 )
 next_level = ExtResource( 5 )
+first_level = true
 
 [node name="Brainstorming" parent="." instance=ExtResource( 2 )]
 
