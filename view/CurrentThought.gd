@@ -6,6 +6,8 @@ var cursor_blink = blink_period
 var last_text = ""
 var incorrect = false
 
+export var last_level : bool = false
+
 func _process(delta):
 	if cursor_blink < -blink_period:
 		cursor_blink = blink_period
